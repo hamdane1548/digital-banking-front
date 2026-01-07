@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {Auth} from '../../services/auth';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Auth } from '../../services/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
-export class Login implements OnInit{
+export class Login implements OnInit {
 
   formLogin! :FormGroup
  constructor(private fb :FormBuilder,private authServices : Auth ,private router : Router) {
@@ -28,9 +28,9 @@ export class Login implements OnInit{
          this.authServices.loadProfile(value);
          this.router.navigateByUrl("/dashbord")
       },
-      error:err => {
-        console.log(err)
+      error: (err) => {
+        console.error(err);
       }
-    })
+    });
   }
 }

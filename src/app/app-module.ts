@@ -55,12 +55,14 @@ import { Sidebar } from './dashbord/components/sidebar/sidebar';
 import { Navbardashbord } from './dashbord/components/navbardashbord/navbardashbord';
 import { Index } from './dashbord/ui/index/index';
 import { AuthDashbord } from './layouts/auth-dashbord/auth-dashbord';
-import {NgClass} from '@angular/common';
-import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptorsFromDi} from '@angular/common/http';
+import { About } from './ui/about/about';
+import { Transactions } from './dashbord/ui/transactions/transactions';
+import { Operations } from './dashbord/ui/operations/operations';
 import {appAuthinterceptorInterceptor} from './interceptors/app-authinterceptor-interceptor';
-import {About} from './ui/about/about';
+import {NgClass} from '@angular/common';
 import { Savingaccount } from './dashbord/ui/savingaccount/savingaccount';
-
+import {Customers} from './dashbord/ui/customers/customers';
+import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptorsFromDi} from '@angular/common/http';
 @NgModule({
   declarations: [
     App,
@@ -129,7 +131,6 @@ import { Savingaccount } from './dashbord/ui/savingaccount/savingaccount';
       withInterceptors([appAuthinterceptorInterceptor])
     ),
   ],
-
   bootstrap: [App]
 })
 export class AppModule { }

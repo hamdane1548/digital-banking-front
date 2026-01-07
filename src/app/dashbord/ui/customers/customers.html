@@ -1,3 +1,96 @@
-<p>
-  faire une pipe | aysn
-</p>
+<section class="w-full h-full px-10 py-8 bg-gray-50">
+
+  <div class="flex items-center justify-between mb-10">
+    <div>
+      <h1 class="text-3xl font-semibold text-gray-900">Customers</h1>
+      <p class="text-sm text-gray-500 mt-1">
+        Manage and monitor registered users
+      </p>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <input
+        type="text"
+        placeholder="Search by name or email"
+        class="h-11 w-64 px-4 border border-gray-300 rounded-xl text-sm
+               focus:outline-none focus:ring-2 focus:ring-[#397367]/40"
+      />
+
+      <button
+        class="h-11 px-6 bg-[#1E3231] text-white rounded-xl
+               text-sm font-medium hover:bg-[#162827] transition">
+        + New customer
+      </button>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-3xl shadow-sm border border-gray-200 overflow-hidden">
+
+    <div
+      class="grid grid-cols-12 px-8 py-4 text-sm
+             text-gray-500 font-medium border-b border-gray-200">
+      <div class="col-span-1">ID</div>
+      <div class="col-span-4">Customer</div>
+      <div class="col-span-4">Email</div>
+      <div class="col-span-3 text-right">Actions</div>
+    </div>
+
+    <!-- LOADING -->
+    <div *ngIf="customers === undefined" class="p-10 text-center text-gray-500">
+      Loading customers...
+    </div>
+
+    <!-- ERROR -->
+    <div *ngIf="erroMessage" class="p-10 text-center text-red-600">
+      {{ erroMessage }}
+    </div>
+
+    <!-- DATA -->
+    <div *ngIf="customers | async as list" class="divide-y divide-gray-100">
+
+      <div
+        *ngFor="let c of list"
+        class="grid grid-cols-12 items-center px-8 py-5
+               hover:bg-gray-50 transition">
+
+        <div class="col-span-1 text-sm text-gray-500">
+          {{ c.id }}
+        </div>
+
+        <div class="col-span-4 flex items-center gap-4">
+          <div
+            class="w-10 h-10 rounded-full bg-[#397367]/20
+                   flex items-center justify-center
+                   text-[#397367] font-semibold uppercase">
+            {{ c.name.charAt(0) }}
+          </div>
+
+          <div>
+            <p class="font-medium text-gray-900">
+              {{ c.name }}
+            </p>
+            <p class="text-xs text-gray-500">
+              Individual account
+            </p>
+          </div>
+        </div>
+
+        <div class="col-span-4 text-sm text-gray-600">
+          {{ c.Email }}
+        </div>
+
+        <div class="col-span-3 text-right space-x-4">
+          <button class="text-sm text-[#397367] hover:underline">
+            Edit
+          </button>
+          <button class="text-sm text-red-600 hover:underline">
+            Delete
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>

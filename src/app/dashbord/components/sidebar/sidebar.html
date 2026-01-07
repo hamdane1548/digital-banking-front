@@ -1,8 +1,15 @@
-<section class="w-full flex flex-col justify-between h-full bg-black rounded-tr-xl rounded-br-xl ">
-  <div class="w-full h-full flex flex-col">
-    <div class="w-full py-5 px-5 space-x-4 items-center h-20 flex">
-      <img width="35" height="35" src="logo.png">
-      <h1 class="text-white text-lg mt-1">TrustPay</h1>
+<section
+  class="w-full h-full flex flex-col justify-between
+         bg-gradient-to-b from-[#0F1F1E] to-[#050A0A]
+         rounded-tr-2xl rounded-br-2xl shadow-2xl"
+>
+
+  <div class="flex flex-col">
+    <div class="flex items-center h-20 px-6 gap-3 border-b border-white/5">
+      <img src="logo.png" class="w-9 h-9">
+      <h1 class="text-white text-lg font-semibold tracking-wide">
+        TrustPay
+      </h1>
     </div>
     <div class="w-full mt-4 h-auto flex flex-col space-y-4 px-4">
       <p class="text-sm text-white font-normal">Main Menu</p>
@@ -25,62 +32,131 @@
               <button routerLink="savingaccount" class="text-sm  font-normal text-white">Saving Account</button>
             </div>
           </div>
-          <div   class="w-full mt-5 ml-6 justify-between flex  h-auto">
-            <div class="w-auto h-full flex space-x-4">
-              <lucide-icon color="gray" size="20px" name="DollarSign"></lucide-icon>
-              <button class="text-sm  font-normal text-white">Current Account</button>
-            </div>
+
+          <lucide-icon
+            name="ChevronRight"
+            size="18"
+            [class.rotate-90]="dropdown_departement"
+            class="transition-transform text-white/60"
+          ></lucide-icon>
+        </button>
+
+        @if (dropdown_departement) {
+          <div class="ml-6 mt-2 flex flex-col space-y-1 border-l border-white/10 pl-4">
+            <button
+              class="flex items-center gap-3 h-9 text-sm text-white/60
+                     hover:text-white transition"
+            >
+              <lucide-icon name="HandCoins" size="16"></lucide-icon>
+              Saving account
+            </button>
+
+            <button
+              class="flex items-center gap-3 h-9 text-sm text-white/60
+                     hover:text-white transition"
+            >
+              <lucide-icon name="DollarSign" size="16"></lucide-icon>
+              Current account
+            </button>
           </div>
         }
       </div>
-      <div class="w-full flex items-center  mt-3 space-x-4 h-auto py-1 px-6">
-        <lucide-icon color="gray" size="20px" name="User"></lucide-icon>
-        <a routerLink="customers" class="text-sm  font-normal text-gray-500">Cutomers</a>
-      </div>
-      <div class="w-full flex items-center  mt-3 space-x-4 h-auto py-1 px-6">
-        <lucide-icon color="gray" size="20px" name="Phone"></lucide-icon>
-        <h1 class="text-sm  font-normal text-gray-500">Contact Us</h1>
-      </div>
-      <div class="w-full flex items-center  mt-3 space-x-4 h-auto py-1 px-6">
-        <lucide-icon color="gray" size="20px" name="Send"></lucide-icon>
-        <h1 class="text-sm  font-normal text-gray-500">Transaction</h1>
-      </div>
-      <div class="w-full flex items-center  mt-3 space-x-4 h-auto py-1 px-6">
-        <lucide-icon color="gray" size="20px" name="Handshake"></lucide-icon>
-        <h1 class="text-sm  font-normal text-gray-500">Operations</h1>
-      </div>
-    </div>
-  </div>
-  <div class="w-full   px-5  py-2  h-60  ">
-    <div class="w-full flex  h-full bg-white rounded-2xl">
-      <img src="image3sold.png" class="">
-    </div>
-  </div>
-  <div class="w-full h-auto mb-1  flex flex-col">
-    <div   class="w-full   mt-6 ml-6 justify-between flex  h-auto">
-      <div class="w-auto h-full flex space-x-4">
-        <lucide-icon color="gray" size="20px" name="Settings"></lucide-icon>
-        <button class="text-sm  font-normal text-gray-500">Settings</button>
-      </div>
-    </div>
-    <div   class="w-full   mt-6 ml-6 justify-between flex  h-auto">
-      <div class="w-auto h-full flex space-x-4">
-        <lucide-icon color="gray" size="20px" name="FileUser"></lucide-icon>
-        <button class="text-sm  font-normal text-gray-500">Contact support</button>
-      </div>
-    </div>
-    <div   class="w-full   mt-6 ml-6 justify-between flex  h-auto">
-      <div class="w-auto h-full flex space-x-4">
-        <lucide-icon color="gray" size="20px" name="LogOut"></lucide-icon>
-        <button (click)="handellogout()" class="text-sm  font-normal text-gray-500">Log Out</button>
-      </div>
-    </div>
 
-    <div class="w-full overflow-hidden mt-5 h-13 flex items-center space-x-3 ">
-      <div class=" bg-amber-200 overflow-hidden flex w-12 h-12 rounded-full ml-2 " >
-        <img src="avisclient/acis1.jpg">
-      </div>
-      <h1 class="text-white">Oussama hamdane</h1>
+      <a
+        routerLink="/dashbord/customers"
+        class="group flex items-center gap-4 px-4 h-11 rounded-xl
+               text-sm text-white/70
+               hover:text-white hover:bg-white/10 transition"
+      >
+        <lucide-icon name="User" size="20"></lucide-icon>
+        Customers
+      </a>
+
+      <a
+        routerLink="/contact"
+        class="group flex items-center gap-4 px-4 h-11 rounded-xl
+               text-sm text-white/70
+               hover:text-white hover:bg-white/10 transition"
+      >
+        <lucide-icon name="Phone" size="20"></lucide-icon>
+        Contact
+      </a>
+
+      <a
+        routerLink="/dashbord/transactions"
+        routerLinkActive="bg-white/10 text-white"
+        class="group flex items-center gap-4 px-4 h-11
+         rounded-lg text-sm text-white/60
+         hover:bg-white/5 hover:text-white transition"
+      >
+        <lucide-icon
+          name="Send"
+          size="20"
+          class="text-white/40 group-hover:text-white"
+        ></lucide-icon>
+
+        <span>Transactions</span>
+      </a>
+
+
+
+      <a
+        routerLink="/dashbord/operations"
+        routerLinkActive="bg-white/10 text-white"
+        class="group flex items-center gap-4 px-4 h-11
+         rounded-lg text-sm text-white/60
+         hover:bg-white/5 hover:text-white transition"
+      >
+        <lucide-icon name="Handshake" size="20"></lucide-icon>
+        <span>Operations</span>
+      </a>
+
     </div>
   </div>
+
+  <div class="px-4 pb-5 space-y-2">
+    <a
+      routerLink="/dashbord/settings"
+      routerLinkActive="bg-white/10 text-white"
+      class="flex items-center gap-4 h-10 px-4 rounded-xl
+         text-sm text-white/60 hover:text-white hover:bg-white/10 transition"
+    >
+      <lucide-icon name="Settings" size="20"></lucide-icon>
+      <span>Settings</span>
+    </a>
+
+
+
+    <button
+      class="flex items-center gap-4 h-10 px-4 rounded-xl
+             text-sm text-white/60 hover:text-white hover:bg-white/10 transition"
+    >
+      <lucide-icon name="FileUser" size="20"></lucide-icon>
+      Support
+    </button>
+
+    <button
+      class="flex items-center gap-4 h-10 px-4 rounded-xl
+             text-sm text-red-400 hover:bg-red-500/10 transition"
+    >
+      <lucide-icon name="LogOut" size="20"></lucide-icon>
+      Log out
+    </button>
+
+    <div class="mt-4 flex items-center gap-3 px-3 py-3
+                bg-white/5 rounded-2xl">
+      <div class="w-11 h-11 rounded-full overflow-hidden ring-2 ring-white/10">
+        <img src="avisclient/acis1.jpg" class="w-full h-full object-cover">
+      </div>
+      <div>
+        <p class="text-sm text-white font-medium">
+          Oussama Hamdane
+        </p>
+        <p class="text-xs text-white/50">
+          Administrator
+        </p>
+      </div>
+    </div>
+  </div>
+
 </section>

@@ -1,0 +1,115 @@
+<section class="w-full h-full px-10 py-8 bg-gray-50">
+
+  <div class="mb-10">
+    <h1 class="text-3xl font-semibold text-gray-900">Operations</h1>
+    <p class="text-sm text-gray-500 mt-1">
+      Overview of banking operations and system actions
+    </p>
+  </div>
+
+  <!-- Overview cards -->
+  <div class="grid grid-cols-4 gap-6 mb-12">
+    <div class="bg-white rounded-2xl border border-gray-200 p-6">
+      <p class="text-sm text-gray-500">Total operations</p>
+      <h2 class="text-3xl font-semibold mt-2">342</h2>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-gray-200 p-6">
+      <p class="text-sm text-gray-500">Completed</p>
+      <h2 class="text-3xl font-semibold mt-2 text-emerald-600">298</h2>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-gray-200 p-6">
+      <p class="text-sm text-gray-500">Pending</p>
+      <h2 class="text-3xl font-semibold mt-2 text-yellow-600">31</h2>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-gray-200 p-6">
+      <p class="text-sm text-gray-500">Failed</p>
+      <h2 class="text-3xl font-semibold mt-2 text-red-600">13</h2>
+    </div>
+  </div>
+
+  <!-- Operations list -->
+  <div class="bg-white rounded-3xl border border-gray-200 shadow-sm overflow-hidden">
+
+    <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+      <h2 class="text-lg font-semibold">Recent operations</h2>
+      <button class="text-sm px-4 py-2 rounded-lg bg-[#1E3231] text-white hover:bg-[#162827] transition">
+        New operation
+      </button>
+    </div>
+
+    <div class="divide-y divide-gray-200">
+
+      <!-- Operation -->
+      <div class="flex items-center justify-between px-6 py-5 hover:bg-gray-50 transition">
+        <div>
+          <h3 class="font-medium text-gray-900">
+            Bank transfer validation
+          </h3>
+          <p class="text-sm text-gray-500">
+            Operation ID: OP-2025-00124
+          </p>
+        </div>
+
+        <div class="flex items-center gap-6">
+          <span class="text-sm text-gray-500">
+            March 12, 2025
+          </span>
+
+          <span class="px-3 py-1 text-xs rounded-full bg-emerald-100 text-emerald-700 font-medium">
+            Completed
+          </span>
+        </div>
+      </div>
+
+      <!-- Operation -->
+      <div class="flex items-center justify-between px-6 py-5 hover:bg-gray-50 transition">
+        <div>
+          <h3 class="font-medium text-gray-900">
+            Account creation approval
+          </h3>
+          <p class="text-sm text-gray-500">
+            Operation ID: OP-2025-00118
+          </p>
+        </div>
+
+        <div class="flex items-center gap-6">
+          <span class="text-sm text-gray-500">
+            March 11, 2025
+          </span>
+
+          <span class="px-3 py-1 text-xs rounded-full bg-yellow-100 text-yellow-700 font-medium">
+            Pending
+          </span>
+        </div>
+      </div>
+
+      <!-- Operation -->
+      <div class="flex items-center justify-between px-6 py-5 hover:bg-gray-50 transition">
+        <div>
+          <h3 class="font-medium text-gray-900">
+            Security verification process
+          </h3>
+          <p class="text-sm text-gray-500">
+            Operation ID: OP-2025-00105
+          </p>
+        </div>
+
+        <div class="flex items-center gap-6">
+          <span class="text-sm text-gray-500">
+            March 9, 2025
+          </span>
+
+          <span class="px-3 py-1 text-xs rounded-full bg-red-100 text-red-700 font-medium">
+            Failed
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
